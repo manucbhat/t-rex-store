@@ -1,11 +1,23 @@
+import { BrowserRouter, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
+import Home from './components/Home';
+import Cart from './components/Cart';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+   <BrowserRouter>
+    <Header />
+   <div>
+   <Route exact path='/'>
+      <Home />
+    </Route>
+    <Route exact path='/cart'>
+      <Cart />
+    </Route>
+   </div>
+   </BrowserRouter>
+      
   );
 }
 
