@@ -1,4 +1,5 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Route,Routes } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -9,12 +10,10 @@ function App() {
    <BrowserRouter>
     <Header />
    <div>
-   <Route exact path='/'>
-      <Home />
-    </Route>
-    <Route exact path='/cart'>
-      <Cart />
-    </Route>
+   <Routes>
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/cart' element={<Cart />} />
+        </Routes>
    </div>
    </BrowserRouter>
       
